@@ -1,0 +1,17 @@
+# S&P 500 + AI chain monitor.  Server is UTC+8.
+# US close 16:00 ET = 04:00-05:00 MYT the next morning, so the daily jobs run
+# Tue-Sat and cover Mon-Fri US sessions.
+SHELL=/bin/bash
+
+# Weekday bars, then the alert check 20 minutes later.
+0  6 * * 2-6  cd /path/to/double_bottom && . ./.env && ~/anaconda3/envs/py312/bin/python update_bars.py  >> logs/cron_bars.log 2>&1
+20 6 * * 2-6  cd /path/to/double_bottom && . ./.env && ~/anaconda3/envs/py312/bin/python check_alerts.py >> logs/cron_alerts.log 2>&1
+
+# Saturday: refresh daily-chart levels, then collect whatever is pending.
+0  9 * * 6    cd /path/to/double_bottom && . ./.env && ~/anaconda3/envs/py312/bin/python refresh_levels.py --timeframe daily --submit >> logs/cron_levels.log 2>&1
+30 9 * * 6    cd /path/to/double_bottom && . ./.env && ~/anaconda3/envs/py312/bin/python collect_levels.py --max-hours 6 >> logs/cron_levels.log 2>&1
+
+# First Saturday of the month only.  Cron ORs day-of-month with day-of-week when
+# both are set, so the day test has to live in the command.
+0  8 * * 6    [ "$(date +\%d)" -le 07 ] && cd /path/to/double_bottom && . ./.env && ~/anaconda3/envs/py312/bin/python refresh_universe.py >> logs/cron_levels.log 2>&1
+30 8 * * 6    [ "$(date +\%d)" -le 07 ] && cd /path/to/double_bottom && . ./.env && ~/anaconda3/envs/py312/bin/python refresh_levels.py --timeframe weekly --submit >> logs/cron_levels.log 2>&1

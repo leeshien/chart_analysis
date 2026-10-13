@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif">
+  <title>Setup Monitor — how it works</title>
+  <desc>Pipeline from market data to Telegram alerts: universe and bars, chart levels, nightly detection, setup classification, delivery. The five setups, an illustrated breakout, and headline numbers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#151a24"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2130"/>
+      <stop offset="1" stop-color="#161b27"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9085e9" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#9085e9" stop-opacity="0"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6478"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.025">
+    <path d="M0 270 H1920 M0 540 H1920 M0 810 H1920 M480 0 V1080 M960 0 V1080 M1440 0 V1080"/>
+  </g>
+
+  <!-- ===== Header ===== -->
+  <text x="88" y="78" fill="#e87ba4" font-size="18" font-weight="700" letter-spacing="4">HOW IT WORKS</text>
+  <text x="88" y="136" fill="#ffffff" font-size="56" font-weight="800">Setup Monitor</text>
+  <text x="88" y="178" fill="#a9b1c3" font-size="24">Every evening, ≈620 US stocks are reduced to the handful of charts worth acting on — and delivered to your phone.</text>
+  <g transform="translate(1590,96)">
+    <rect width="242" height="44" rx="22" fill="#1d2433" stroke="#2c3446"/>
+    <circle cx="26" cy="22" r="6" fill="#2fbf8a"/>
+    <text x="42" y="29" fill="#cfd5e1" font-size="17" font-weight="600">Runs nightly · Tue–Sat</text>
+  </g>
+
+  <!-- ===== Pipeline ===== -->
+  <g font-size="17" fill="#c3c9d6">
+    <!-- card 1 -->
+    <g transform="translate(88,220)">
+      <rect width="320" height="228" rx="16" fill="url(#card)" stroke="#2a3244"/>
+      <circle cx="36" cy="38" r="18" fill="#2a78d6"/><text x="36" y="44" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">1</text>
+      <text x="66" y="45" fill="#fff" font-size="22" font-weight="700">Universe &amp; bars</text>
+      <text x="24" y="96">S&amp;P 500 + AI supply chain</text>
+      <text x="24" y="126">≈620 US-listed stocks</text>
+      <text x="24" y="156">Daily bars, adjustment-aware</text>
+      <rect x="24" y="180" width="150" height="28" rx="14" fill="#232b3c"/><text x="99" y="199" text-anchor="middle" fill="#8f99ad" font-size="14">yfinance · SQLite</text>
+    </g>
+    <path d="M412 334 H446" stroke="#5b6478" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <!-- card 2 -->
+    <g transform="translate(444,220)">
+      <rect width="320" height="228" rx="16" fill="url(#card)" stroke="#2a3244"/>
+      <circle cx="36" cy="38" r="18" fill="#2a78d6"/><text x="36" y="44" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">2</text>
+      <text x="66" y="45" fill="#fff" font-size="22" font-weight="700">Support &amp; resistance</text>
+      <text x="24" y="96">AI vision reads each chart</text>
+      <text x="24" y="126">Daily and weekly levels</text>
+      <text x="24" y="156">Scored on touches &amp; volume</text>
+      <rect x="24" y="180" width="168" height="28" rx="14" fill="#232b3c"/><text x="108" y="199" text-anchor="middle" fill="#8f99ad" font-size="14">Gemini Batch API</text>
+    </g>
+    <path d="M768 334 H802" stroke="#5b6478" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <!-- card 3 -->
+    <g transform="translate(800,220)">
+      <rect width="320" height="228" rx="16" fill="url(#card)" stroke="#2a3244"/>
+      <circle cx="36" cy="38" r="18" fill="#2a78d6"/><text x="36" y="44" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">3</text>
+      <text x="66" y="45" fill="#fff" font-size="22" font-weight="700">Detect</text>
+      <text x="24" y="96">Touch or break of each level</text>
+      <text x="24" y="126">Band sized to the stock's range</text>
+      <text x="24" y="156">One alert per visit to a level</text>
+      <rect x="24" y="180" width="128" height="28" rx="14" fill="#232b3c"/><text x="88" y="199" text-anchor="middle" fill="#8f99ad" font-size="14">after US close</text>
+    </g>
+    <path d="M1124 334 H1158" stroke="#5b6478" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <!-- card 4 -->
+    <g transform="translate(1156,220)">
+      <rect width="320" height="228" rx="16" fill="url(#card)" stroke="#e87ba4" stroke-opacity="0.55"/>
+      <circle cx="36" cy="38" r="18" fill="#e87ba4"/><text x="36" y="44" text-anchor="middle" fill="#0d1117" font-size="17" font-weight="800">4</text>
+      <text x="66" y="45" fill="#fff" font-size="22" font-weight="700">Classify</text>
+      <text x="24" y="96">Daily + weekly trend verdicts</text>
+      <text x="24" y="126">Five setup rules + context</text>
+      <text x="24" y="156">One outlook per stock a day</text>
+      <rect x="24" y="180" width="150" height="28" rx="14" fill="#232b3c"/><text x="99" y="199" text-anchor="middle" fill="#8f99ad" font-size="14">pure, tested rules</text>
+    </g>
+    <path d="M1480 334 H1514" stroke="#5b6478" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <!-- card 5 -->
+    <g transform="translate(1512,220)">
+      <rect width="320" height="228" rx="16" fill="url(#card)" stroke="#229ed9" stroke-opacity="0.7"/>
+      <circle cx="36" cy="38" r="18" fill="#229ed9"/><text x="36" y="44" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">5</text>
+      <text x="66" y="45" fill="#fff" font-size="22" font-weight="700">Deliver to Telegram</text>
+      <text x="24" y="96">Instant push per breakout</text>
+      <text x="24" y="126">Evening digest by outlook</text>
+      <text x="24" y="156">PDF of weekly | daily charts</text>
+      <rect x="24" y="180" width="146" height="28" rx="14" fill="#16344a"/><text x="97" y="199" text-anchor="middle" fill="#7cc8ee" font-size="14">Telegram Bot API</text>
+    </g>
+  </g>
+
+  <!-- ===== Setup engine ===== -->
+  <g transform="translate(88,492)">
+    <rect width="1000" height="282" rx="16" fill="url(#card)" stroke="#2a3244"/>
+    <text x="28" y="44" fill="#fff" font-size="22" font-weight="700">The setup engine</text>
+    <text x="232" y="44" fill="#8f99ad" font-size="16">price at a level × daily trend × weekly trend</text>
+    <text x="972" y="44" text-anchor="end" fill="#8f99ad" font-size="15" letter-spacing="1">OUTLOOK</text>
+
+    <g font-size="17">
+      <g transform="translate(28,70)">
+        <rect width="8" height="34" rx="3" fill="#e87ba4"/>
+        <text x="22" y="23" fill="#fff" font-weight="700">Breakout</text>
+        <text x="236" y="23" fill="#c3c9d6">Closes through a setup's ceiling, or a multi-year high</text>
+        <text x="944" y="23" text-anchor="end" fill="#2fbf8a" font-weight="600">▲ Bullish</text>
+      </g>
+      <g transform="translate(28,112)">
+        <rect width="8" height="34" rx="3" fill="#9085e9"/>
+        <text x="22" y="23" fill="#fff" font-weight="700">Breakout setup</text>
+        <text x="236" y="23" fill="#c3c9d6">Daily sideways, weekly up, pressing the top of the range</text>
+        <text x="944" y="23" text-anchor="end" fill="#2fbf8a" font-weight="600">▲ Bullish</text>
+      </g>
+      <g transform="translate(28,154)">
+        <rect width="8" height="34" rx="3" fill="#3987e5"/>
+        <text x="22" y="23" fill="#fff" font-weight="700">Reversal base</text>
+        <text x="236" y="23" fill="#c3c9d6">Daily down, weekly flat, sharp rally into resistance</text>
+        <text x="944" y="23" text-anchor="end" fill="#2fbf8a" font-weight="600">▲ Bullish</text>
+      </g>
+      <g transform="translate(28,196)">
+        <rect width="8" height="34" rx="3" fill="#2fbf8a"/>
+        <text x="22" y="23" fill="#fff" font-weight="700">Pullback to support</text>
+        <text x="236" y="23" fill="#c3c9d6">Weekly up, holding a major support</text>
+        <text x="944" y="23" text-anchor="end" fill="#2fbf8a" font-weight="600">▲ Bullish</text>
+      </g>
+      <g transform="translate(28,238)">
+        <rect width="8" height="34" rx="3" fill="#eb6834"/>
+        <text x="22" y="23" fill="#fff" font-weight="700">Major support test</text>
+        <text x="236" y="23" fill="#c3c9d6">Major support broken, or tested without an uptrend</text>
+        <text x="944" y="23" text-anchor="end" fill="#f08a63" font-weight="600">▼ Bearish</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== Illustration: setup then breakout ===== -->
+  <g transform="translate(1124,492)">
+    <rect width="708" height="282" rx="16" fill="url(#card)" stroke="#2a3244"/>
+    <text x="28" y="44" fill="#fff" font-size="22" font-weight="700">From setup to breakout</text>
+    <g font-size="14" font-weight="600">
+      <rect x="452" y="22" width="112" height="30" rx="15" fill="#232b3c"/><text x="508" y="42" text-anchor="middle" fill="#cfd5e1">D ↔ sideways</text>
+      <rect x="572" y="22" width="108" height="30" rx="15" fill="#232b3c"/><text x="626" y="42" text-anchor="middle" fill="#2fbf8a">W ↑ uptrend</text>
+    </g>
+    <!-- resistance and support -->
+    <path d="M28 112 H680" stroke="#eb6834" stroke-width="2" stroke-dasharray="7 6" opacity="0.9"/>
+    <text x="34" y="104" fill="#eb6834" font-size="14" font-weight="600">resistance</text>
+    <path d="M28 222 H600" stroke="#3987e5" stroke-width="2" stroke-dasharray="7 6" opacity="0.9"/>
+    <text x="34" y="244" fill="#3987e5" font-size="14" font-weight="600">major support</text>
+    <!-- price path -->
+    <path d="M40 170 L80 150 L118 178 L156 212 L194 196 L232 218 L270 186 L308 150 L346 116 L384 140 L422 178 L460 208 L498 176 L536 140 L566 118 L594 102 L626 78 L664 66 L664 262 L40 262 Z" fill="url(#area)"/>
+    <polyline points="40,170 80,150 118,178 156,212 194,196 232,218 270,186 308,150 346,116 384,140 422,178 460,208 498,176 536,140 566,118 594,102 626,78 664,66" fill="none" stroke="#e6e9f0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- setup marker -->
+    <circle cx="346" cy="116" r="9" fill="#9085e9" stroke="#0d1117" stroke-width="3"/>
+    <text x="346" y="90" text-anchor="middle" font-size="15"><tspan fill="#b9b1f5" font-weight="700">Breakout setup</tspan><tspan fill="#8f99ad" font-size="13"> · touches the ceiling</tspan></text>
+    <!-- support hold marker -->
+    <circle cx="232" cy="218" r="7" fill="#2fbf8a" stroke="#0d1117" stroke-width="3"/>
+    <text x="232" y="250" text-anchor="middle" fill="#8f99ad" font-size="13">holds support</text>
+    <!-- breakout marker -->
+    <circle cx="594" cy="102" r="10" fill="#e87ba4" stroke="#0d1117" stroke-width="3"/>
+    <text x="680" y="152" text-anchor="end" fill="#f2a9c4" font-size="15" font-weight="700">Breakout</text>
+    <text x="680" y="170" text-anchor="end" fill="#8f99ad" font-size="13">closes through → push</text>
+  </g>
+
+  <!-- ===== Numbers ===== -->
+  <g transform="translate(88,804)">
+    <g>
+      <rect width="285" height="190" rx="16" fill="#161b27" stroke="#2a3244"/>
+      <text x="26" y="84" fill="#fff" font-size="50" font-weight="800">≈620</text>
+      <text x="26" y="128" fill="#a9b1c3" font-size="18">stocks scanned</text>
+      <text x="26" y="152" fill="#a9b1c3" font-size="18">every night</text>
+    </g>
+    <g transform="translate(307,0)">
+      <rect width="285" height="190" rx="16" fill="#161b27" stroke="#2a3244"/>
+      <text x="26" y="82" font-size="33" font-weight="800"><tspan fill="#fff">80–170</tspan><tspan fill="#6b7489"> → </tspan><tspan fill="#e87ba4">5–20</tspan></text>
+      <text x="26" y="128" fill="#a9b1c3" font-size="18">level events a night,</text>
+      <text x="26" y="152" fill="#a9b1c3" font-size="18">filtered to ranked setups</text>
+    </g>
+    <g transform="translate(614,0)">
+      <rect width="285" height="190" rx="16" fill="#161b27" stroke="#e87ba4" stroke-opacity="0.55"/>
+      <text x="26" y="84" fill="#e87ba4" font-size="50" font-weight="800">500+</text>
+      <text x="26" y="128" fill="#a9b1c3" font-size="18">tests pin every rule</text>
+      <text x="26" y="152" fill="#a9b1c3" font-size="18">and edge case</text>
+    </g>
+
+    <!-- Telegram delivery -->
+    <g transform="translate(921,0)">
+      <rect width="823" height="190" rx="16" fill="#122230" stroke="#229ed9" stroke-opacity="0.7"/>
+      <circle cx="40" cy="36" r="17" fill="#229ed9"/>
+      <path d="M31 36 L48 28.5 L44.5 45 L39.5 40.5 L36.5 43.5 L36.8 39 L45 31.5 L35 38 Z" fill="#fff"/>
+      <text x="68" y="43" fill="#fff" font-size="21" font-weight="700">Delivered to Telegram</text>
+      <text x="799" y="42" text-anchor="end" fill="#7cc8ee" font-size="15">on your phone by morning · push · digest · PDF</text>
+
+      <!-- push bubble -->
+      <g transform="translate(20,62)">
+        <rect width="380" height="112" rx="14" fill="#1b3247"/>
+        <circle cx="22" cy="23" r="6" fill="#e87ba4"/>
+        <text x="36" y="28" fill="#fff" font-size="16" font-weight="700">BREAKOUT · V</text>
+        <text x="16" y="52" fill="#9fb3c8" font-size="14">Visa · Payment Processing · 701B</text>
+        <text x="16" y="74" fill="#d8e3ee" font-size="14">closed through R 381.60 (W), setup the day before</text>
+        <text x="16" y="96" fill="#9fb3c8" font-size="14">Close 385.45 · Trend D ↔ sideways, W ↑ up</text>
+        <text x="364" y="100" text-anchor="end" fill="#6f8aa3" font-size="12">06:21</text>
+      </g>
+
+      <!-- digest bubble -->
+      <g transform="translate(420,62)">
+        <rect width="383" height="112" rx="14" fill="#1b3247"/>
+        <text x="16" y="28" fill="#fff" font-size="16" font-weight="700">Setup monitor · evening digest</text>
+        <text x="16" y="52" fill="#9fb3c8" font-size="14">13 setups · <tspan fill="#2fbf8a">▲ 8 bullish</tspan> · <tspan fill="#f08a63">▼ 5 bearish</tspan></text>
+        <text x="16" y="74" fill="#d8e3ee" font-size="14"><tspan fill="#e87ba4" font-weight="700">MONITOR NOW</tspan>  PLTR · DDOG · V · GDDY · ELV</text>
+        <rect x="16" y="84" width="196" height="20" rx="5" fill="#244560"/>
+        <text x="26" y="99" fill="#cfe3f3" font-size="13">PDF · summary + chart pages</text>
+        <text x="367" y="100" text-anchor="end" fill="#6f8aa3" font-size="12">06:22</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="88" y="1040" fill="#6b7489" font-size="16">Rules in code · thresholds tuned privately · Python 3.12 · SQLite · yfinance · Gemini · matplotlib · Telegram Bot API</text>
+  <text x="1832" y="1040" text-anchor="end" fill="#6b7489" font-size="16">Not investment advice</text>
+</svg>

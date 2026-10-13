@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+data/
+.pytest_cache/
+.env
+state/
+output-wider_window/
+Qwen3.5-9B-VLM/
+llama.cpp/
+llama.log
+*.bak
+*.bak2
+*.removed
+output*/
+logs/
+output_chain/
+
+# Private: tuned values and the material that reveals them.
+params.toml
+docs/
+analysis/
+tests/
+# Private: the tuned Gemini prompt and the legacy pattern prompts.
+sr_prompts.py
+prompts.py

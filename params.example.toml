@@ -1,0 +1,64 @@
+# Signal-rule parameters: ILLUSTRATIVE VALUES ONLY.
+#
+# The monitor's tuned values are private. Copy this file to params.toml
+# (git-ignored) and set your own; params.py loads params.toml when it exists
+# and falls back to this file with a warning.
+
+[trend]
+# Sideways when |drift| is inside this band (drift = slope * sqrt(n) / median
+# bar range, on log price).
+flat_drift_daily = 0.5
+flat_drift_weekly = 0.5
+# Below this R-squared the line fit is noise and the verdict is "undecided".
+min_fit = 0.3
+# Windows tried in order, widening only while the verdict is undecided.
+months = [3, 6, 9, 12]
+
+[touch]
+# Touch band half-width as a multiple of the stock's median daily bar range.
+tol_range_mult_daily = 0.5
+tol_range_mult_weekly = 0.5
+# Flat fallbacks when a bar range cannot be measured.
+tol_fallback_daily = 0.012
+tol_fallback_weekly = 0.03
+
+[levels]
+# A level is major when it has at least this many visits and this score.
+major_min_episodes_daily = 3
+major_min_score_daily = 0.6
+major_min_episodes_weekly = 3
+major_min_score_weekly = 0.6
+
+[double_bottom]
+# Bars between the two lows.
+leg_min_bars_daily = 60
+leg_max_bars_daily = 250
+leg_min_bars_weekly = 12
+leg_max_bars_weekly = 50
+
+[setups]
+# A Breakout setup stays live this many daily bars for a confirmed breakout.
+confirm_bars = 40
+# Reversal base: close at least rally_min above the lowest low of rally_bars.
+rally_min = 0.08
+rally_bars = 20
+# Long-range high breakout: weekly highs over this many completed weeks...
+peak_weeks = 104
+# ...fired once per this many daily bars.
+peak_quiet_bars = 10
+# Double-bottom neckline and alerted resistance count as one within this.
+neckline_match = 0.05
+# Breakout retest: a close above the resistance within this many bars.
+retest_bars = 20
+
+[monitor]
+# Shock: a close-to-close move of this multiple of the median daily bar,
+# clamped to [shock_min_pct, shock_max_pct]; shock_pct when unmeasurable.
+shock_range_mult = 5.0
+shock_min_pct = 0.1
+shock_max_pct = 0.3
+shock_pct = 0.15
+# Daily and weekly levels within this fraction count as confluence.
+confluence_pct = 0.02
+# Trading days clear of a level before a new touch alerts again.
+visit_gap_days = 3
