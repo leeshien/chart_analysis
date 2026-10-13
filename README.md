@@ -80,7 +80,7 @@ User-named **price watches** (`watches.py`) are always delivered.
 ```
 refresh_universe.py   monthly   S&P 500 constituents (Wikipedia) + AI-chain tickers
 update_bars.py        nightly   incremental daily bars (yfinance), adjustment-drift resync
-refresh_levels.py     weekly /  submit Gemini batch jobs for daily / weekly S&R levels
+refresh_levels.py     weekly /  submit batch jobs for daily / weekly S&R levels
 collect_levels.py     monthly   collect finished batches, score and store levels
 check_alerts.py       nightly   detect, classify, build the PDF, deliver to Telegram
 ```
