@@ -73,6 +73,12 @@ User-named **price watches** (`watches.py`) are always delivered.
    level, the alert bar, and each panel's trend verdict with its drift, fit
    and window.
 
+A night's delivery in Telegram (session of 2026-10-09):
+
+<video src="screen_records/record_20261009.mp4" controls width="360"></video>
+
+[▶ Watch the screen recording](screen_records/record_20261009.mp4)
+
 ---
 
 ## Pipeline
