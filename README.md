@@ -79,6 +79,14 @@ A night's delivery in Telegram (session of 2026-10-09):
 
 [▶ Watch the screen recording](screen_records/record_20261009.mp4)
 
+The PDF report for the same session — the summary page:
+
+![PDF report summary page](assets/report_summary.png)
+
+and one chart page per alerted stock (PLTR, a 3-year high breakout):
+
+![PDF report chart page for PLTR](assets/report_chart_page.png)
+
 ---
 
 ## Pipeline
