@@ -78,7 +78,10 @@ A night's delivery in Telegram (session of 2026-10-09):
 <video src="screen_records/record_20261009.mp4" controls width="360"></video>
 
 
-https://github.com/user-attachments/assets/3c5a3826-5af3-46aa-aed0-3a72ca4e9a89
+
+https://github.com/user-attachments/assets/c6b3a42f-cb1d-473f-93bd-d9448a514638
+
+
 
 
 ---
